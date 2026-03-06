@@ -1,0 +1,38 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.python-version
+.venv/
+venv/
+env/
+
+# FastAPI / runtime
+*.log
+*.pid
+
+# Build / packaging
+build/
+dist/
+*.egg-info/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# IDE/editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node (if present in subprojects)
+node_modules/
+.next/
+out/
+coverage/
