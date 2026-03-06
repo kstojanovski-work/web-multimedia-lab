@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "session.start.schema.json",
+  "title": "SessionStart",
+  "type": "object",
+  "required": ["type", "sessionId", "fps"],
+  "properties": {
+    "type": { "const": "session.start" },
+    "sessionId": { "type": "string", "minLength": 1 },
+    "fps": { "type": "integer", "minimum": 1, "maximum": 60 },
+    "language": { "type": "string", "default": "de" }
+  },
+  "additionalProperties": false
+}

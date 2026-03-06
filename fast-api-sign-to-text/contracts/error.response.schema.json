@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "error.response.schema.json",
+  "title": "ErrorResponse",
+  "type": "object",
+  "required": ["type", "code", "message", "ts"],
+  "properties": {
+    "type": { "const": "error" },
+    "code": { "type": "string" },
+    "message": { "type": "string" },
+    "ts": { "type": "number" }
+  },
+  "additionalProperties": false
+}

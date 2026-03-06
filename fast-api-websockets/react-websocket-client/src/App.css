@@ -1,0 +1,167 @@
+:root {
+  font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  color: #1f2933;
+  background: linear-gradient(160deg, #f8fbff 0%, #e8f2ff 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.panel {
+  width: min(720px, 100%);
+  background: #ffffff;
+  border: 1px solid #d0dceb;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 12px 30px rgba(16, 24, 40, 0.08);
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+
+.status {
+  margin-top: 0;
+  color: #334e68;
+}
+
+label {
+  display: block;
+  margin-top: 14px;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px;
+  border: 1px solid #bcccdc;
+  border-radius: 8px;
+  font: inherit;
+}
+
+.button-row,
+.send-row {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+button {
+  border: 0;
+  border-radius: 8px;
+  background: #1f6feb;
+  color: #fff;
+  padding: 10px 12px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:disabled {
+  background: #8fa5c2;
+  cursor: not-allowed;
+}
+
+.url {
+  margin-top: 12px;
+  word-break: break-all;
+  color: #486581;
+}
+
+.messages {
+  margin-top: 14px;
+  padding: 12px;
+  border: 1px solid #d9e2ec;
+  border-radius: 8px;
+  background: #f8fbff;
+  min-height: 130px;
+  max-height: 240px;
+  overflow: auto;
+}
+
+.messages li + li {
+  margin-top: 8px;
+}
+
+.socket-window-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.socket-window {
+  width: min(760px, 100%);
+  background: #ffffff;
+  border: 1px solid #d0dceb;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 18px 45px rgba(16, 24, 40, 0.18);
+}
+
+.socket-window h2 {
+  margin: 0 0 8px;
+}
+
+.socket-window-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.socket-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+.socket-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px;
+  border: 1px solid #d9e2ec;
+  border-radius: 8px;
+  background: #f8fbff;
+}
+
+.socket-item p {
+  margin: 2px 0 0;
+  color: #486581;
+}
+
+@media (max-width: 640px) {
+  .button-row,
+  .send-row,
+  .socket-window-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .socket-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

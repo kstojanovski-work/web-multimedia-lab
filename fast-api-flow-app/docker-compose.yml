@@ -1,0 +1,30 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      args:
+        CUSTOM_CA_CERT_BASE64: ${CUSTOM_CA_CERT_BASE64-}
+    ports:
+      - "8000:8000"
+    environment:
+      WEBRTC_TURN_URL: ${BACKEND_WEBRTC_TURN_URL-}
+      WEBRTC_TURN_USERNAME: ${BACKEND_WEBRTC_TURN_USERNAME-}
+      WEBRTC_TURN_CREDENTIAL: ${BACKEND_WEBRTC_TURN_CREDENTIAL-}
+      WEBRTC_ICE_SERVERS: ${BACKEND_WEBRTC_ICE_SERVERS-[{"urls":"stun:stun.l.google.com:19302"}]}
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        CUSTOM_CA_CERT_BASE64: ${CUSTOM_CA_CERT_BASE64-}
+        VITE_BACKEND_URL: http://localhost:8000
+        VITE_ICE_SERVERS: ${FRONTEND_VITE_ICE_SERVERS-}
+        VITE_TURN_URL: ${FRONTEND_VITE_TURN_URL-}
+        VITE_TURN_USERNAME: ${FRONTEND_VITE_TURN_USERNAME-}
+        VITE_TURN_CREDENTIAL: ${FRONTEND_VITE_TURN_CREDENTIAL-}
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend

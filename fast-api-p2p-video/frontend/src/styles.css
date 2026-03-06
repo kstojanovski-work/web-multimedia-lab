@@ -1,0 +1,66 @@
+:root {
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  color: #171717;
+  background: #f4f4f5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 1.5rem;
+}
+
+h1 {
+  margin: 0 0 1rem;
+}
+
+.controls {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+input {
+  padding: 0.55rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #a1a1aa;
+  min-width: 220px;
+}
+
+button {
+  padding: 0.55rem 0.9rem;
+  border-radius: 8px;
+  border: 0;
+  background: #1f2937;
+  color: white;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.6;
+}
+
+.status {
+  margin: 0 0 1rem;
+}
+
+.videos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+video {
+  width: 100%;
+  border-radius: 12px;
+  background: black;
+  aspect-ratio: 16 / 9;
+}

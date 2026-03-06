@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "frame.chunk.schema.json",
+  "title": "FrameChunk",
+  "type": "object",
+  "required": ["type", "sessionId", "seq", "ts", "encoding", "payload"],
+  "properties": {
+    "type": { "const": "frame.chunk" },
+    "sessionId": { "type": "string", "minLength": 1 },
+    "seq": { "type": "integer", "minimum": 0 },
+    "ts": { "type": "number" },
+    "encoding": { "enum": ["image/jpeg;base64"] },
+    "payload": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": false
+}
